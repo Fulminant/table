@@ -68,13 +68,16 @@ class Table {
     for (let i = 0; i < rows.length; i++) {
       const row = rows[i];
       const cols = Array.from(row.cells);
-      const inputs = cols.map(cell => cell.querySelector('.' + CSS.input));
+      const inputs = cols.map(cell => cell.querySelector('.tc-table__inp'));
       const isWorthless = inputs.every(this._isEmpty);
 
       if (isWorthless) {
         continue;
       }
-      data.push(cols.map(cell => cell.innerHTML));
+
+      data.push(inputs.map(input => {
+        return input.innerHTML
+      }));
     }
 
     return {
