@@ -213,7 +213,7 @@ export class TableConstructor {
    * @return {boolean}
    */
   _isToolbar(elem) {
-    return !!(elem.closest('.' + CSS.toolBarHor) || elem.closest('.' + CSS.toolBarVer));
+    return elem && !!(elem.closest('.' + CSS.toolBarHor) || elem.closest('.' + CSS.toolBarVer));
   }
 
   /**
